@@ -56,7 +56,6 @@ function startVoice() {
     }
 
     const rec = new SR();
-    rec.lang = "pt-PT";
     rec.interimResults = false;
 
     rec.onstart = () => {
