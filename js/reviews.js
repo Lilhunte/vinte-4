@@ -46,10 +46,17 @@ async function sbInsert(row) {
 
 async function renderReviews() {
     const list = document.getElementById("reviews-list");
-    const avgEl = document.getElementById("reviews-avg");
+    const avgEl = document.getElementById("reviews-avg"); // For homepage preview
+    const summaryEl = document.getElementById("reviews-summary");
+    const summaryAvgEl = document.getElementById("reviews-summary-avg");
+    const summaryStarsEl = document.getElementById("reviews-summary-stars");
+    const summaryTotalEl = document.getElementById("reviews-summary-total");
+
     if (!list) return;
 
     list.innerHTML = `<div class="text-sm text-neutral-600">A carregar avaliações...</div>`;
+    if (summaryEl) summaryEl.style.display = 'none';
+
 
     try {
         const rows = await sbFetch('reviews?select=*&order=created_at.desc&limit=50');
@@ -57,9 +64,19 @@ async function renderReviews() {
         list.innerHTML = ""; // Clear loading message
 
         if (rows.length > 0) {
+            const mean = (rows.reduce((a, r) => a + Number(r.rating || 0), 0) / rows.length);
+
+            // For homepage preview
             if (avgEl) {
-                const mean = (rows.reduce((a, r) => a + Number(r.rating || 0), 0) / rows.length).toFixed(1);
-                avgEl.textContent = `${mean} ★ (${rows.length} avaliações)`;
+                avgEl.textContent = `${mean.toFixed(1)} ★ (${rows.length} avaliações)`;
+            }
+
+            // For main reviews page summary
+            if (summaryEl) {
+                summaryAvgEl.textContent = mean.toFixed(1);
+                summaryStarsEl.innerHTML = "★".repeat(Math.round(mean)) + "☆".repeat(5 - Math.round(mean));
+                summaryTotalEl.textContent = `de ${rows.length} avaliações`;
+                summaryEl.style.display = 'flex';
             }
 
             const isPreview = !!avgEl; // If the average element exists, we're on the homepage (preview)

@@ -46,17 +46,47 @@ async function sendMessage(message, action="text_input"){
   }
 }
 
-function startVoice(){
-  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-  if(!SR){ addMessageToChat("O seu navegador não suporta entrada por voz.", "omni"); return; }
-  const rec = new SR();
-  rec.lang = "pt-PT"; rec.interimResults = false;
-  rec.onresult = (e)=> {
-    const transcript = Array.from(e.results).map(r=>r[0].transcript).join(" ");
-    sendMessage(transcript, "voice_input");
-  };
-  rec.onerror = ()=> addMessageToChat("Não consegui captar a sua voz. Tente novamente.", "omni");
-  rec.start();
+function startVoice() {
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const voiceBtn = document.getElementById("chat-voice");
+
+    if (!SR) {
+        addMessageToChat("O seu navegador não suporta entrada por voz.", "omni");
+        return;
+    }
+
+    const rec = new SR();
+    rec.lang = "pt-PT";
+    rec.interimResults = false;
+
+    rec.onstart = () => {
+        if (voiceBtn) {
+            voiceBtn.classList.add("bg-oxblood", "text-white", "animate-pulse");
+            voiceBtn.textContent = "🎙️";
+        }
+    };
+
+    rec.onspeechend = () => {
+        rec.stop();
+    };
+
+    rec.onend = () => {
+        if (voiceBtn) {
+            voiceBtn.classList.remove("bg-oxblood", "text-white", "animate-pulse");
+        }
+    };
+
+    rec.onresult = (e) => {
+        const transcript = Array.from(e.results).map(r => r[0].transcript).join(" ");
+        sendMessage(transcript, "voice_input");
+    };
+
+    rec.onerror = (e) => {
+        console.error("Speech recognition error:", e.error);
+        addMessageToChat("Não consegui captar a sua voz. Tente novamente.", "omni");
+    };
+
+    rec.start();
 }
 
 function mountChat(){
