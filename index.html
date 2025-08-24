@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinte & 4 | Cozinha de Autor em Aveiro</title>
+    <meta name="description" content="Descubra o Vinte & 4, um restaurante de cozinha de autor em Aveiro. Oferecemos uma experiência gastronómica única com pratos sazonais e um ambiente elegante.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vinte-e-quatro.example.com/">
+    <meta property="og:title" content="Vinte & 4 | Cozinha de Autor em Aveiro">
+    <meta property="og:description" content="Descubra o Vinte & 4, um restaurante de cozinha de autor em Aveiro. Oferecemos uma experiência gastronómica única com pratos sazonais e um ambiente elegante.">
+    <meta property="og:image" content="https://vinte-e-quatro.example.com/assets/og.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vinte-e-quatro.example.com/">
+    <meta property="twitter:title" content="Vinte & 4 | Cozinha de Autor em Aveiro">
+    <meta property="twitter:description" content="Descubra o Vinte & 4, um restaurante de cozinha de autor em Aveiro. Oferecemos uma experiência gastronómica única com pratos sazonais e um ambiente elegante.">
+    <meta property="twitter:image" content="https://vinte-e-quatro.example.com/assets/og.jpg">
+
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;600&display=swap">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bone: '#faf7f2',
+              charcoal: '#141414',
+              oxblood: '#5c1a1a',
+              gold: '#caa970',
+            },
+            fontFamily: {
+              'serif': ['"Cormorant Garamond"', 'serif'],
+              'sans': ['"Inter"', 'sans-serif'],
+            },
+            boxShadow: {
+              soft: '0 10px 30px rgba(20,20,20,.08)'
+            },
+            borderRadius: { '2xl': '1.25rem' }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-bone text-charcoal font-sans">
+    <header class="sticky top-0 z-40 bg-bone/80 backdrop-blur-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-bold text-oxblood">Vinte & 4</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="hover:text-gold">Home</a>
+                <a href="menu.html" class="hover:text-gold">Menu</a>
+                <a href="reviews.html" class="hover:text-gold">Avaliações</a>
+                <a href="contact.html" class="hover:text-gold">Contacto</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span id="open-badge" class="px-3 py-1 rounded-full text-xs font-semibold"></span>
+                <!-- Language switcher placeholder -->
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="h-screen bg-cover bg-center flex items-center" style="background-image: url('https://placehold.co/1920x1080/faf7f2/141414?text=Vinte+%26+4');">
+            <div class="container mx-auto px-6 text-center text-white bg-black/50 py-12">
+                <h1 class="text-5xl md:text-7xl font-serif font-bold text-bone">Cozinha de Autor em Aveiro</h1>
+                <p class="mt-4 text-lg text-bone/90">Uma experiência memorável, onde cada prato conta uma história.</p>
+            </div>
+        </section>
+
+        <!-- Quick CTA Row -->
+        <section class="py-12 bg-white/50">
+            <div class="container mx-auto px-6 flex flex-wrap justify-center gap-4">
+                <a href="#" class="px-6 py-3 bg-oxblood text-white rounded-lg font-semibold micro-hover shadow-soft">Reservar Mesa</a>
+                <a href="tel:+351967573241" class="px-6 py-3 bg-charcoal text-white rounded-lg font-semibold micro-hover shadow-soft">Ligar Agora</a>
+                <a href="menu.html" class="px-6 py-3 border border-charcoal text-charcoal rounded-lg font-semibold micro-hover shadow-soft">Ver Menu</a>
+                <a href="contact.html" class="px-6 py-3 border border-charcoal text-charcoal rounded-lg font-semibold micro-hover shadow-soft">Localização</a>
+            </div>
+        </section>
+
+        <!-- Signature Dishes -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-serif text-center mb-12">Pratos de Assinatura</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Placeholder Dish 1 -->
+                    <div class="bg-white rounded-2xl shadow-soft overflow-hidden micro-hover">
+                        <img src="https://placehold.co/600x400/ccc/141414?text=Prato+1" alt="Prato de assinatura 1" class="w-full h-64 object-cover" loading="lazy">
+                        <div class="p-6">
+                            <h3 class="text-xl font-serif font-bold">Bacalhau à Lagareiro</h3>
+                            <p class="mt-2 text-sm text-neutral-600">Lombo de bacalhau confitado em azeite, batata a murro e grelos salteados.</p>
+                        </div>
+                    </div>
+                    <!-- Placeholder Dish 2 -->
+                    <div class="bg-white rounded-2xl shadow-soft overflow-hidden micro-hover">
+                        <img src="https://placehold.co/600x400/ddd/141414?text=Prato+2" alt="Prato de assinatura 2" class="w-full h-64 object-cover" loading="lazy">
+                        <div class="p-6">
+                            <h3 class="text-xl font-serif font-bold">Polvo na Brasa</h3>
+                            <p class="mt-2 text-sm text-neutral-600">Polvo tenro grelhado na brasa com puré de batata doce e pimentos padrón.</p>
+                        </div>
+                    </div>
+                    <!-- Placeholder Dish 3 -->
+                    <div class="bg-white rounded-2xl shadow-soft overflow-hidden micro-hover">
+                        <img src="https://placehold.co/600x400/eee/141414?text=Prato+3" alt="Prato de assinatura 3" class="w-full h-64 object-cover" loading="lazy">
+                        <div class="p-6">
+                            <h3 class="text-xl font-serif font-bold">Naco de Vitela</h3>
+                            <p class="mt-2 text-sm text-neutral-600">Naco de vitela maturado, batata rústica e um molho de três pimentas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plate of the Day -->
+        <section id="plate-of-day-section" class="py-20 bg-white/50">
+            <!-- Content will be injected by JS -->
+        </section>
+
+        <!-- Reviews Preview -->
+        <section class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-serif mb-4">O que dizem os nossos clientes</h2>
+                <div id="reviews-avg" class="text-lg text-gold font-bold mb-8"></div>
+                <div id="reviews-list" class="grid md:grid-cols-3 gap-8 text-left">
+                    <!-- Reviews will be loaded here by JS -->
+                    <div class="p-6 rounded-2xl border bg-white shadow-soft">Carregando avaliações...</div>
+                </div>
+                <a href="reviews.html" class="mt-12 inline-block px-6 py-3 border border-charcoal text-charcoal rounded-lg font-semibold hover:bg-charcoal hover:text-white transition-colors">Ver Todas as Avaliações</a>
+            </div>
+        </section>
+
+        <!-- Instagram Strip -->
+        <section class="py-12">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-serif text-center mb-8">Siga-nos no Instagram</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
+                    <!-- Placeholder Instagram Images -->
+                    <a href="#" target="_blank"><img src="https://placehold.co/300x300/faf7f2/141414?text=@vinte_e_quatro" alt="Instagram post" class="aspect-square object-cover w-full"></a>
+                    <a href="#" target="_blank"><img src="https://placehold.co/300x300/faf7f2/141414?text=@vinte_e_quatro" alt="Instagram post" class="aspect-square object-cover w-full"></a>
+                    <a href="#" target="_blank"><img src="https://placehold.co/300x300/faf7f2/141414?text=@vinte_e_quatro" alt="Instagram post" class="aspect-square object-cover w-full"></a>
+                    <a href="#" target="_blank"><img src="https://placehold.co/300x300/faf7f2/141414?text=@vinte_e_quatro" alt="Instagram post" class="aspect-square object-cover w-full"></a>
+                    <a href="#" target="_blank"><img src="https://placehold.co/300x300/faf7f2/141414?text=@vinte_e_quatro" alt="Instagram post" class="aspect-square object-cover w-full"></a>
+                    <a href="#" target="_blank"><img src="https://placehold.co/300x300/faf7f2/141414?text=@vinte_e_quatro" alt="Instagram post" class="aspect-square object-cover w-full"></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-charcoal text-bone/80 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Vinte & 4. Todos os direitos reservados.</p>
+            <p class="text-sm mt-2">Rua do Exemplo, 123, 3800-000 Aveiro, Portugal</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/dayjs/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs/plugin/utc.js"></script>
+    <script src="https://unpkg.com/dayjs/plugin/timezone.js"></script>
+    <script src="js/utils.dom.js" type="module"></script>
+    <script src="js/utils.time.js" type="module"></script>
+    <script src="js/data.hours.js" type="module"></script>
+    <script src="js/reviews.js" type="module"></script>
+    <script src="js/chat.js" type="module"></script>
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>

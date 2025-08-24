@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Vinte & 4</title>
+    <meta name="description" content="Consulte o nosso menu completo. Pratos de peixe, carne, vegetarianos e sobremesas, com opções para todos os gostos.">
+    <!-- OG/Twitter tags as in index.html -->
+    <meta property="og:title" content="Menu | Vinte & 4">
+    <meta property="og:description" content="Consulte o nosso menu completo. Pratos de peixe, carne, vegetarianos e sobremesas, com opções para todos os gostos.">
+
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;600&display=swap">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bone: '#faf7f2',
+              charcoal: '#141414',
+              oxblood: '#5c1a1a',
+              gold: '#caa970',
+            },
+            fontFamily: {
+              'serif': ['"Cormorant Garamond"', 'serif'],
+              'sans': ['"Inter"', 'sans-serif'],
+            },
+            boxShadow: {
+              soft: '0 10px 30px rgba(20,20,20,.08)'
+            },
+            borderRadius: { '2xl': '1.25rem' }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-bone text-charcoal font-sans">
+    <header class="sticky top-0 z-40 bg-bone/80 backdrop-blur-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-bold text-oxblood">Vinte & 4</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="hover:text-gold">Home</a>
+                <a href="menu.html" class="hover:text-gold">Menu</a>
+                <a href="reviews.html" class="hover:text-gold">Avaliações</a>
+                <a href="contact.html" class="hover:text-gold">Contacto</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span id="open-badge" class="px-3 py-1 rounded-full text-xs font-semibold"></span>
+                <!-- Language switcher placeholder -->
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-20">
+        <h1 class="text-5xl font-serif text-center mb-4">O Nosso Menu</h1>
+        <p class="text-center text-lg text-neutral-600 mb-12">Uma seleção cuidada de pratos que celebram os sabores de Portugal.</p>
+
+        <!-- Language & Filter controls -->
+        <div id="menu-controls" class="mb-8 p-4 rounded-2xl bg-white/60 shadow-soft flex flex-wrap gap-4 items-center justify-center">
+            <div id="language-switcher" class="flex gap-2">
+                <button data-lang="pt" class="px-3 py-1 rounded-lg border border-oxblood bg-oxblood text-white">PT</button>
+                <button data-lang="en" class="px-3 py-1 rounded-lg border hover:bg-oxblood/80 hover:text-white">EN</button>
+                <button data-lang="es" class="px-3 py-1 rounded-lg border hover:bg-oxblood/80 hover:text-white">ES</button>
+                <button data-lang="fr" class="px-3 py-1 rounded-lg border hover:bg-oxblood/80 hover:text-white">FR</button>
+            </div>
+            <div id="category-filters" class="flex gap-2 flex-wrap justify-center">
+                <!-- Category filters will be loaded by JS -->
+            </div>
+        </div>
+
+        <!-- Menu container -->
+        <div id="menu-container" class="space-y-12">
+            <!-- Menu content will be injected by JS -->
+            <div class="text-center p-8">Carregando menu...</div>
+        </div>
+
+    </main>
+
+    <footer class="bg-charcoal text-bone/80 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Vinte & 4. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/dayjs/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs/plugin/utc.js"></script>
+    <script src="https://unpkg.com/dayjs/plugin/timezone.js"></script>
+    <script src="js/utils.dom.js" type="module"></script>
+    <script src="js/utils.time.js" type="module"></script>
+    <script src="js/data.hours.js" type="module"></script>
+    <script src="js/data.menu.pt.js" type="module"></script>
+    <script src="js/data.menu.en.js" type="module"></script>
+    <script src="js/data.menu.es.js" type="module"></script>
+    <script src="js/data.menu.fr.js" type="module"></script>
+    <script src="js/menu.js" type="module"></script>
+    <script src="js/chat.js" type="module"></script>
+    <script src="js/app.js" type="module"></script>
+
+</body>
+</html>

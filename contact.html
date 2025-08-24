@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Vinte & 4</title>
+    <meta name="description" content="Contacte-nos para fazer a sua reserva. Encontre o nosso endereço, horário de funcionamento e informações de contacto.">
+    <!-- OG/Twitter tags as in index.html -->
+    <meta property="og:title" content="Contacto | Vinte & 4">
+    <meta property="og:description" content="Contacte-nos para fazer a sua reserva. Encontre o nosso endereço, horário de funcionamento e informações de contacto.">
+
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;600&display=swap">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bone: '#faf7f2',
+              charcoal: '#141414',
+              oxblood: '#5c1a1a',
+              gold: '#caa970',
+            },
+            fontFamily: {
+              'serif': ['"Cormorant Garamond"', 'serif'],
+              'sans': ['"Inter"', 'sans-serif'],
+            },
+            boxShadow: {
+              soft: '0 10px 30px rgba(20,20,20,.08)'
+            },
+            borderRadius: { '2xl': '1.25rem' }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-bone text-charcoal font-sans">
+    <header class="sticky top-0 z-40 bg-bone/80 backdrop-blur-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-bold text-oxblood">Vinte & 4</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="hover:text-gold">Home</a>
+                <a href="menu.html" class="hover:text-gold">Menu</a>
+                <a href="reviews.html" class="hover:text-gold">Avaliações</a>
+                <a href="contact.html" class="hover:text-gold">Contacto</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span id="open-badge" class="px-3 py-1 rounded-full text-xs font-semibold"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-20">
+        <h1 class="text-5xl font-serif text-center mb-12">Contacte-nos e Visite-nos</h1>
+        <div class="grid lg:grid-cols-2 gap-16">
+            <!-- Contact Info & Hours -->
+            <div class="space-y-8">
+                <div>
+                    <h2 class="text-2xl font-serif font-bold mb-2">Endereço</h2>
+                    <p>Rua do Exemplo, 123<br>3800-000 Aveiro, Portugal</p>
+                    <a href="https://www.google.com/maps/place/Aveiro" target="_blank" class="text-oxblood hover:underline mt-2 inline-block">Ver no mapa</a>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-serif font-bold mb-2">Reservas</h2>
+                    <p>Telefone: <a href="tel:+351967573241" class="text-oxblood hover:underline">+351 967 573 241</a></p>
+                    <p>Email: <a href="mailto:reservas@vinteequatro.pt" class="text-oxblood hover:underline">reservas@vinteequatro.pt</a> (placeholder)</p>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-serif font-bold mb-2">Horário</h2>
+                    <div id="hours-table">
+                        <!-- Hours will be loaded by JS -->
+                        <p>Carregando horário...</p>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-serif font-bold mb-2">Siga-nos</h2>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-oxblood hover:underline">Instagram</a>
+                        <a href="#" class="text-oxblood hover:underline">TripAdvisor</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Embed -->
+            <div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.256295982811!2d-8.6591390845934!3d40.64052177934017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd23980765660655%3A0x4a74b684533e798!2sAveiro!5e0!3m2!1spt-PT!2spt!4v1678886400000!5m2!1spt-PT!2spt"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="rounded-2xl shadow-soft">
+                </iframe>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-charcoal text-bone/80 py-12 mt-20">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Vinte & 4. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/dayjs/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs/plugin/utc.js"></script>
+    <script src="https://unpkg.com/dayjs/plugin/timezone.js"></script>
+    <script src="js/utils.dom.js" type="module"></script>
+    <script src="js/utils.time.js" type="module"></script>
+    <script src="js/data.hours.js" type="module"></script>
+    <script src="js/chat.js" type="module"></script>
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>

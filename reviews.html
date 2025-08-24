@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliações | Vinte & 4</title>
+    <meta name="description" content="Veja o que os nossos clientes dizem e deixe a sua própria avaliação sobre a sua experiência no Vinte & 4.">
+    <!-- OG/Twitter tags as in index.html -->
+    <meta property="og:title" content="Avaliações | Vinte & 4">
+    <meta property="og:description" content="Veja o que os nossos clientes dizem e deixe a sua própria avaliação sobre a sua experiência no Vinte & 4.">
+
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;600&display=swap">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bone: '#faf7f2',
+              charcoal: '#141414',
+              oxblood: '#5c1a1a',
+              gold: '#caa970',
+            },
+            fontFamily: {
+              'serif': ['"Cormorant Garamond"', 'serif'],
+              'sans': ['"Inter"', 'sans-serif'],
+            },
+            boxShadow: {
+              soft: '0 10px 30px rgba(20,20,20,.08)'
+            },
+            borderRadius: { '2xl': '1.25rem' }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-bone text-charcoal font-sans">
+    <header class="sticky top-0 z-40 bg-bone/80 backdrop-blur-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-bold text-oxblood">Vinte & 4</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="hover:text-gold">Home</a>
+                <a href="menu.html" class="hover:text-gold">Menu</a>
+                <a href="reviews.html" class="hover:text-gold">Avaliações</a>
+                <a href="contact.html" class="hover:text-gold">Contacto</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span id="open-badge" class="px-3 py-1 rounded-full text-xs font-semibold"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-20">
+        <div class="grid lg:grid-cols-2 gap-16">
+            <!-- Form Section -->
+            <div>
+                <h1 class="text-4xl font-serif mb-4">Deixe a sua Avaliação</h1>
+                <p class="mb-8 text-neutral-600">A sua opinião é muito importante para nós. Partilhe a sua experiência.</p>
+                <form id="reviews-form" class="space-y-4">
+                    <div>
+                        <label for="rev-name" class="block text-sm font-semibold mb-1">Nome</label>
+                        <input type="text" id="rev-name" name="name" required class="w-full px-4 py-2 border rounded-lg bg-white/80 focus:ring-oxblood focus:border-oxblood">
+                    </div>
+                    <div>
+                        <label for="rev-rating" class="block text-sm font-semibold mb-1">Classificação (1-5)</label>
+                        <select id="rev-rating" name="rating" required class="w-full px-4 py-2 border rounded-lg bg-white/80 focus:ring-oxblood focus:border-oxblood">
+                            <option value="5">★★★★★</option>
+                            <option value="4">★★★★☆</option>
+                            <option value="3">★★★☆☆</option>
+                            <option value="2">★★☆☆☆</option>
+                            <option value="1">★☆☆☆☆</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="rev-comment" class="block text-sm font-semibold mb-1">Comentário</label>
+                        <textarea id="rev-comment" name="comment" rows="5" required class="w-full px-4 py-2 border rounded-lg bg-white/80 focus:ring-oxblood focus:border-oxblood"></textarea>
+                    </div>
+                    <button type="submit" class="px-8 py-3 bg-oxblood text-white rounded-lg font-semibold hover:bg-oxblood/90 transition-colors">Publicar Avaliação</button>
+                </form>
+            </div>
+
+            <!-- List Section -->
+            <div>
+                <h2 class="text-4xl font-serif mb-8">Avaliações Recentes</h2>
+                <div id="reviews-list" class="space-y-6">
+                    <!-- Reviews will be loaded here -->
+                    <div class="p-6 rounded-2xl border bg-white shadow-soft">Carregando avaliações...</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-charcoal text-bone/80 py-12 mt-20">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Vinte & 4. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/dayjs/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs/plugin/utc.js"></script>
+    <script src="https://unpkg.com/dayjs/plugin/timezone.js"></script>
+    <script src="js/utils.dom.js" type="module"></script>
+    <script src="js/utils.time.js" type="module"></script>
+    <script src="js/data.hours.js" type="module"></script>
+    <script src="js/reviews.js" type="module"></script>
+    <script src="js/chat.js" type="module"></script>
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>
