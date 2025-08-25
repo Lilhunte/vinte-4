@@ -4,7 +4,7 @@ export const HOURS = {
   2: { lunch: [], dinner: [] }, // Monday (Closed)
   3: { lunch: ["12:15", "15:00"], dinner: [] }, // Tuesday
   4: { lunch: ["12:15", "15:00"], dinner: [] }, // Wednesday
-  5: { lunch: ["12:15", "15:00"], dinner: ["19:15", "22:00"] }, // Thursday
-  6: { lunch: ["12:15", "15:00"], dinner: ["19:15", "22:00"] }, // Friday
-  7: { lunch: ["12:15", "15:00"], dinner: ["19:15", "22:00"] }, // Saturday
+  5: { lunch: ["12:15", "15:00"], dinner: ["19:30", "22:00"] }, // Thursday
+  6: { lunch: ["12:15", "15:00"], dinner: ["19:30", "22:00"] }, // Friday
+  7: { lunch: ["12:15", "15:00"], dinner: ["19:30", "22:00"] }, // Saturday
 };
