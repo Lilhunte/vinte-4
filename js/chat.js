@@ -92,7 +92,7 @@ function mountChat(){
   const note = document.createElement("div");
   note.id="chat-note";
   note.className="fixed bottom-28 right-6 z-50 rounded-2xl bg-white/90 border p-3 text-sm max-w-[220px] shadow-soft animate-bounce";
-  note.innerHTML="🗨️ <strong>Fale connosco em tempo real</strong>";
+  note.innerHTML="🗨️ <strong>Reserve já a sua mesa comigo sem gastar a conta de chamadas</strong>";
   document.body.appendChild(note);
 
   const btn = document.createElement("button");
